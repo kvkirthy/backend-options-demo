@@ -1,7 +1,7 @@
-angular.module("messageBoard", ['ui.router'])
-.config(function($stateProvider, $urlRouterProvider){
 
-	Parse.initialize("zhsfpUN2lBRPGI3Odk5l4I95ZfGWIUp5o2Z3ew3a", "LgsVjlzMtgxmeGBIp4YyJoMi5iuQxSSiXJho4kZr");
+angular.module("messageBoard", ['ui.router', 'firebase'])
+.constant("messageBoardReference", {})
+.config(function($stateProvider, $urlRouterProvider, messageBoardReference){
     
 	$stateProvider
 		.state('home',{
@@ -14,6 +14,7 @@ angular.module("messageBoard", ['ui.router'])
 
 })
 .controller('homeController', function($scope){
+
 
 	$scope.messageList = [{
 		author: "Tom Hanks",
