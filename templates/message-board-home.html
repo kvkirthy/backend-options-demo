@@ -1,14 +1,22 @@
-<h2>Parse Sample - Message Board</h2>
 
-<input type="text" ng-model="author" placeholder="Enter user name" style="width:350px" ng-show="author == undefined" ng-model-options="{ updateOn: 'blur' }" /><br/>
-<h4 ng-show="author != undefined">{{author}}</h4>
-<textarea ng-model="newMessage" style="width:350px"></textarea> <br/>
-<button style="width:350px" ng-click="postMessage()">Go</button>
-
-<h2>Messages</h2>
-
-<div ng-repeat="message in messageList">
-	<strong>{{message.author}}</strong>&nbsp;<span>{{message.createdAt}}</span>
-	<div>{{message.message}}</div>
+<div class="text-center">
+	<input type="text" ng-model="author" placeholder="Enter user name" style="width:350px" ng-show="author == undefined" ng-model-options="{ updateOn: 'blur' }" /><br/>
+</div>
+<div ng-show="author != undefined">	
+	<div class="text-center">
+		<h3>{{author}}</h3>
+		<textarea ng-model="newMessage" style="width:350px"></textarea> <br/>
+		<button style="width:350px" ng-click="postMessage()">Go</button>		
+	</div>
 	<hr/>
+	
+	<table class="table table-striped">
+		<tr ng-repeat="message in messageList">
+			<td>
+				<strong>{{message.author}}</strong> says,
+				<div>{{message.message}}</div>
+			</td> 
+			
+		</tr>		
+	</table>	
 </div>

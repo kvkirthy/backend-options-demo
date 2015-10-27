@@ -1,8 +1,8 @@
 
 angular.module("messageBoard", ['ui.router', 'firebase'])
 .constant("messageBoardReference", {})
-.config(function($stateProvider, $urlRouterProvider, messageBoardReference){
-    
+.config(function($stateProvider, $urlRouterProvider){
+
 	$stateProvider
 		.state('home',{
 	      url: "/home",
@@ -14,7 +14,6 @@ angular.module("messageBoard", ['ui.router', 'firebase'])
 
 })
 .controller('homeController', function($scope){
-
 
 	$scope.messageList = [{
 		author: "Tom Hanks",
