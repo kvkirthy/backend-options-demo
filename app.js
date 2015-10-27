@@ -4,16 +4,16 @@ angular.module("messageBoard", ['ui.router'])
 	Parse.initialize("zhsfpUN2lBRPGI3Odk5l4I95ZfGWIUp5o2Z3ew3a", "LgsVjlzMtgxmeGBIp4YyJoMi5iuQxSSiXJho4kZr");
     
 	$stateProvider
-		.state('parseSample',{
-	      url: "/parseSample",
-	      templateUrl: "templates/parse-sample.html",
-	      controller:'parseSampleController'
+		.state('home',{
+	      url: "/home",
+	      templateUrl: "templates/message-board-home.html",
+	      controller:'homeController'
 	    })
 
-	$urlRouterProvider.otherwise("/parseSample");
+	$urlRouterProvider.otherwise("/home");
 
 })
-.controller('parseSampleController', function($scope){
+.controller('homeController', function($scope){
 
 	$scope.messageList = [{
 		author: "Tom Hanks",
@@ -31,3 +31,5 @@ angular.module("messageBoard", ['ui.router'])
 	}
 
 })
+
+;
